@@ -8,7 +8,7 @@ function showFilter() {
     const filterForm = document.getElementById("filterContent");
     const newForm = document.getElementById("newContent");
   
-    // hide the other menu
+    // hide other menu
     newForm.style.display = "none";
   
     // toggle filter menu
@@ -19,7 +19,7 @@ function showAddNew() {
     const filterForm = document.getElementById("filterContent");
     const newForm = document.getElementById("newContent");
   
-    // hide the other menu
+    // hide other menu
     filterForm.style.display = "none";
   
     // toggle add form (your CSS expects flex)
