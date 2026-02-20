@@ -27,7 +27,11 @@ function showAddNew() {
     filterForm.style.display = "none";
   
     // add new article form
-    newForm.style.display = (newForm.style.display === "flex") ? "none" : "flex";
+    if (newForm.style.display === "flex"){
+      newForm.style.display = "none";
+    } else {
+      newForm.style.display = "flex";
+    }
 }
   
 function filterArticles() {
