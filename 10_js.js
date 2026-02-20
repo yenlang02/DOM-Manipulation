@@ -67,14 +67,17 @@ function addNewArticle() {
   
     const type = typeRadio.value; // "opinion", "recipe", "update"
   
-    // create the article element with correct class
+    // creating  article element w/correct class
     const article = document.createElement("article");
     article.classList.add(type);
   
-    // marker
     const marker = document.createElement("span");
     marker.classList.add("marker");
-    marker.textContent = (type === "update") ? "Update" : capitalize(type);
+    if (type === "update") {
+      marker.textContent = "Update";
+    } else {
+      marker.textContent = capitalize(type);
+    }
   
     // title
     const h2 = document.createElement("h2");
@@ -84,14 +87,13 @@ function addNewArticle() {
     const pText = document.createElement("p");
     pText.textContent = text;
   
-    // optional "Read more..."
+    // read more link
     const pLink = document.createElement("p");
     const a = document.createElement("a");
     a.href = "moreDetails.html";
     a.textContent = "Read more...";
     pLink.appendChild(a);
   
-    // assemble
     article.appendChild(marker);
     article.appendChild(h2);
     article.appendChild(pText);
@@ -100,12 +102,12 @@ function addNewArticle() {
     // add to list
     document.getElementById("articleList").appendChild(article);
   
-    // clear inputs
+    // clearing inputs
     titleEl.value = "";
     textEl.value = "";
     typeRadio.checked = false;
   
-    // apply current filters to the new article too
+    // applying current filters to new article 
     filterArticles();
 }
   
