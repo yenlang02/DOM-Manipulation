@@ -11,8 +11,12 @@ function showFilter() {
     // hide other menu
     newForm.style.display = "none";
   
-    // toggle filter menu
-    filterForm.style.display = (filterForm.style.display === "block") ? "none" : "block";
+    // filter menu
+    if (filterForm.style.display === "block") {
+      filterForm.style.display = "none";
+    } else {
+      filterForm.style.display = "block";
+    }
 }
   
 function showAddNew() {
@@ -22,7 +26,7 @@ function showAddNew() {
     // hide other menu
     filterForm.style.display = "none";
   
-    // toggle add form (your CSS expects flex)
+    // add new article form
     newForm.style.display = (newForm.style.display === "flex") ? "none" : "flex";
 }
   
